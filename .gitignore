@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# parcel
+dist
+.cache
+
+#osx
+.DS_Store
+**/.DS_Store
