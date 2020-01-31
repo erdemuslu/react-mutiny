@@ -1,0 +1,8 @@
+{
+  "name": "react-mutiny",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:erdemuslu/react-mutiny.git",
+  "author": "Erdem Uslu <usluerdem@yandex.com>",
+  "license": "MIT"
+}
