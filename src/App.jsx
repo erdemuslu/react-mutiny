@@ -1,5 +1,9 @@
 import React from 'react';
 
-const App = () => <div role="application">App mounted</div>;
+import Wrapper from './components/Wrapper/Wrapper';
+
+const App = () => (
+  <Wrapper />
+);
 
 export default App;
