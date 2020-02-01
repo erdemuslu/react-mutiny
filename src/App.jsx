@@ -18,11 +18,11 @@ App.defaultProps = {
     {
       color: '#23395b',
       title: 'TODO',
-      selected: true,
+      selected: false,
       selector: 'todo',
     },
     {
-      color: '#f1bb87',
+      color: '#f78154',
       title: 'IN PROGRESS',
       selected: false,
       selector: 'in-progress',
