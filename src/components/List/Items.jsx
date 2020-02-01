@@ -4,9 +4,10 @@ import React, {
 
 import { MainContext } from '../../store';
 import { getUnselectedItems } from '../../selectors';
+import { addItem } from '../../actions';
 
 const Items = () => {
-  const { state } = useContext(MainContext);
+  const { state, dispatch } = useContext(MainContext);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const Items = () => {
   }, [state]);
 
   const handleClick = (selector) => {
-    console.log(selector);
+    dispatch(addItem({ selector }));
   };
 
   return (

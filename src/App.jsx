@@ -21,11 +21,11 @@ App.defaultProps = {
       selected: false,
       selector: 'todo',
     },
-    'in-progpress': {
+    inProgres: {
       color: '#f78154',
       title: 'IN PROGRESS',
       selected: false,
-      selector: 'in-progress',
+      selector: 'inProgres',
     },
     completed: {
       color: '#669d69',

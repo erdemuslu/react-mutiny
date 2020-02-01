@@ -9,7 +9,13 @@ export default function itemReducer(state, action) {
     case ITEMS_GET:
       return { ...state, items: action.payload };
     case ITEM_ADD:
-      return { ...state, items: action.payload };
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.selector]: { ...state.items[action.payload.selector], selected: true },
+        },
+      };
     case SELECTED_ITEMS_WIDTH:
       return { ...state, itemProps: { ...state.itemProps, width: action.payload } };
     default:
