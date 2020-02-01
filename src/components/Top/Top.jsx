@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SelectedItems from './SelectedItems';
+import Form from './Form';
 
 const Top = () => (
   <div
@@ -8,6 +9,7 @@ const Top = () => (
     className="rm-top"
   >
     <SelectedItems />
+    <Form />
   </div>
 );
 

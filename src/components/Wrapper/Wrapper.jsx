@@ -13,7 +13,7 @@ const Wrapper = ({ initialItems }) => {
   return (
     <div
       role="grid"
-      className="rm"
+      className="rm rm--dark"
     >
       <Top />
     </div>

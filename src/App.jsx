@@ -16,7 +16,7 @@ const App = ({ initialItems }) => (
 App.defaultProps = {
   initialItems: [
     {
-      color: '#3fa7d6',
+      color: '#23395b',
       title: 'TODO',
       selected: true,
       selector: 'todo',
@@ -24,11 +24,11 @@ App.defaultProps = {
     {
       color: '#f1bb87',
       title: 'IN PROGRESS',
-      selected: true,
+      selected: false,
       selector: 'in-progress',
     },
     {
-      color: '#abe188',
+      color: '#669d69',
       title: 'COMPLETED',
       selected: true,
       selector: 'completed',
