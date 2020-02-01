@@ -22,7 +22,7 @@ const SelectedItems = () => {
     >
       {
         selectedItems
-          ? selectedItems.map((item, index) => (
+          ? Object.values(selectedItems).map((item, index) => (
             <div
               key={index.toString()}
               className="rm-tag"

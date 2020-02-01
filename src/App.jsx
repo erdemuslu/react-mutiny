@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, shape } from 'prop-types';
+import { shape } from 'prop-types';
 
 import Store from './store';
 
@@ -14,30 +14,30 @@ const App = ({ initialItems }) => (
 );
 
 App.defaultProps = {
-  initialItems: [
-    {
+  initialItems: {
+    todo: {
       color: '#23395b',
       title: 'TODO',
       selected: false,
       selector: 'todo',
     },
-    {
+    'in-progpress': {
       color: '#f78154',
       title: 'IN PROGRESS',
       selected: false,
       selector: 'in-progress',
     },
-    {
+    completed: {
       color: '#669d69',
       title: 'COMPLETED',
       selected: true,
       selector: 'completed',
     },
-  ],
+  },
 };
 
 App.propTypes = {
-  initialItems: arrayOf(shape({})),
+  initialItems: shape({}),
 };
 
 export default App;

@@ -27,6 +27,8 @@
     padding: .5em 1em;
     cursor: pointer;
     color: #fff;
+    outline: none;
+    border: 0;
 
     &:not(:last-child) {
       margin-right: .4em;

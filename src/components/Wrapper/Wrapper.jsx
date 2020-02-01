@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { arrayOf, shape } from 'prop-types';
+import { shape } from 'prop-types';
 
 import { MainContext } from '../../store';
 import { createInitial } from '../../actions';
@@ -27,7 +27,7 @@ Wrapper.defaultProps = {
 };
 
 Wrapper.propTypes = {
-  initialItems: arrayOf(shape({})),
+  initialItems: shape({}),
 };
 
 export default Wrapper;

@@ -4,7 +4,7 @@ import { node } from 'prop-types';
 import itemReducer from '../reducers/itemReducer';
 
 const INITIAL_STORE = {
-  items: [],
+  items: {},
   itemsProps: {
     width: '0',
   },

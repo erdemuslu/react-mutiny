@@ -1,5 +1,5 @@
 import React, {
-  memo, createRef, useContext, useEffect, useState,
+  memo, useContext, useEffect, useState,
 } from 'react';
 
 import { MainContext } from '../../store';
@@ -13,6 +13,10 @@ const Items = () => {
     setItems(getUnselectedItems(state.items));
   }, [state]);
 
+  const handleClick = (selector) => {
+    console.log(selector);
+  };
+
   return (
     <div
       role="grid"
@@ -20,16 +24,18 @@ const Items = () => {
     >
       {
         items
-          ? items.map((item, index) => (
-            <div
+          ? Object.values(items).map((item, index) => (
+            <button
               key={index.toString()}
+              type="button"
               className="rm-tag"
+              onClick={handleClick.bind(this, item.selector)}
               style={{
                 backgroundColor: item.color,
               }}
             >
               {item.title}
-            </div>
+            </button>
           )) : null
       }
     </div>
