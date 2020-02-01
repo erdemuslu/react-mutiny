@@ -5,6 +5,7 @@ import { MainContext } from '../../store';
 import { createInitial } from '../../actions';
 
 import Top from '../Top/Top';
+import List from '../List/List';
 
 const Wrapper = ({ initialItems }) => {
   const { dispatch } = useContext(MainContext);
@@ -16,6 +17,7 @@ const Wrapper = ({ initialItems }) => {
       className="rm rm--dark"
     >
       <Top />
+      <List />
     </div>
   );
 };
