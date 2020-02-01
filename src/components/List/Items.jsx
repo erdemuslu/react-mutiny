@@ -6,6 +6,8 @@ import { MainContext } from '../../store';
 import { getUnselectedItems } from '../../selectors';
 import { addItem } from '../../actions';
 
+import Item from './Item';
+
 const Items = () => {
   const { state, dispatch } = useContext(MainContext);
   const [items, setItems] = useState([]);
@@ -14,8 +16,12 @@ const Items = () => {
     setItems(getUnselectedItems(state.items));
   }, [state]);
 
-  const handleClick = (selector) => {
+  const tagOnClick = (selector) => {
     dispatch(addItem({ selector }));
+  };
+
+  const menuOnClick = (selector) => {
+    console.log(selector);
   };
 
   return (
@@ -26,17 +32,14 @@ const Items = () => {
       {
         items
           ? Object.values(items).map((item, index) => (
-            <button
+            <Item
               key={index.toString()}
-              type="button"
-              className="rm-tag"
-              onClick={handleClick.bind(this, item.selector)}
-              style={{
-                backgroundColor: item.color,
-              }}
-            >
-              {item.title}
-            </button>
+              tagOnClick={tagOnClick}
+              menuOnClick={menuOnClick}
+              backgroundColor={item.color}
+              title={item.title}
+              selector={item.selector}
+            />
           )) : null
       }
     </div>
