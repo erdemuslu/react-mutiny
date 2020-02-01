@@ -1,15 +1,37 @@
-import React, { useState } from 'react';
+import React, {
+  createRef,
+  useContext,
+  useEffect,
+} from 'react';
+
+import { MainContext } from '../../store';
+import {
+  setInputValue,
+  updateInputStatus,
+} from '../../actions';
 
 const Form = () => {
-  const [value, setValue] = useState('');
+  const { state, dispatch } = useContext(MainContext);
+  const inputElRef = createRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   const handleChange = ({ target: { value: inputValue } }) => {
-    setValue(inputValue);
+    dispatch(setInputValue(inputValue));
   };
+
+  const handleFocus = () => dispatch(
+    updateInputStatus({ isFocus: true }),
+  );
+  // const handleBlur = () => dispatch(updateInputStatus({ isFocus: false, isBlur: true }));
+
+  useEffect(() => {
+    if (inputElRef.current) {
+      inputElRef.current.focus();
+    }
+  }, [state]);
 
   return (
     <div
@@ -24,7 +46,11 @@ const Form = () => {
           type="text"
           aria-label="item"
           onChange={handleChange}
-          value={value}
+          value={state.form.value}
+          placeholder="type something"
+          onFocus={handleFocus}
+          ref={inputElRef}
+          // onBlur={handleBlur}
         />
       </form>
     </div>

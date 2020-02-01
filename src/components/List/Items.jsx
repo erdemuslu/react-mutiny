@@ -4,7 +4,11 @@ import React, {
 
 import { MainContext } from '../../store';
 import { getUnselectedItems } from '../../selectors';
-import { addItem } from '../../actions';
+import {
+  addItem,
+  setInputValue,
+  updateInputStatus,
+} from '../../actions';
 
 import Item from './Item';
 
@@ -13,15 +17,17 @@ const Items = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setItems(getUnselectedItems(state.items));
+    setItems(getUnselectedItems([state.items, state.form.value]));
   }, [state]);
 
   const tagOnClick = (selector) => {
     dispatch(addItem({ selector }));
+    dispatch(setInputValue(''));
+    dispatch(updateInputStatus({ isForceFocus: true }));
   };
 
   const menuOnClick = (selector) => {
-    console.log(selector);
+    console.log('onMenuClick', selector);
   };
 
   return (

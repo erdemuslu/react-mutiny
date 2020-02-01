@@ -1,7 +1,9 @@
 import {
   ITEMS_GET,
   ITEM_ADD,
-  SELECTED_ITEMS_WIDTH,
+  // SELECTED_ITEMS_WIDTH,
+  INPUT_VALUE_SET,
+  INPUT_STATUS_UPDATE,
 } from './types';
 
 export const createInitial = (payload) => ({
@@ -14,7 +16,17 @@ export const addItem = (payload) => ({
   payload,
 });
 
-export const setSelectedItemsWrapperWidth = (payload) => ({
-  type: SELECTED_ITEMS_WIDTH,
+export const setInputValue = (payload) => ({
+  type: INPUT_VALUE_SET,
   payload,
 });
+
+export const updateInputStatus = (payload) => ({
+  type: INPUT_STATUS_UPDATE,
+  payload,
+});
+
+// export const setSelectedItemsWrapperWidth = (payload) => ({
+//   type: SELECTED_ITEMS_WIDTH,
+//   payload,
+// });

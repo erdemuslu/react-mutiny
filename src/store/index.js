@@ -5,8 +5,16 @@ import itemReducer from '../reducers/itemReducer';
 
 const INITIAL_STORE = {
   items: {},
-  itemsProps: {
-    width: '0',
+  // itemsProps: {
+  //   width: '0',
+  // },
+  form: {
+    value: '',
+    inputStatus: {
+      isFocus: false,
+      isBlur: true,
+      isForceFocus: false,
+    },
   },
 };
 

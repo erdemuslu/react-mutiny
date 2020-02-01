@@ -30,7 +30,7 @@ App.defaultProps = {
     completed: {
       color: '#669d69',
       title: 'COMPLETED',
-      selected: true,
+      selected: false,
       selector: 'completed',
     },
   },

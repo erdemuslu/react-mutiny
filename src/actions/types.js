@@ -1,3 +1,5 @@
 export const ITEMS_GET = 'ITEMS_GET';
 export const ITEM_ADD = 'ITEM_ADD';
 export const SELECTED_ITEMS_WIDTH = 'SELECTED_ITEMS_WIDTH';
+export const INPUT_VALUE_SET = 'INPUT_VALUE_SET';
+export const INPUT_STATUS_UPDATE = 'INPUT_STATUS_UPDATE';

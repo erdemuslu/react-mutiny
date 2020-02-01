@@ -8,8 +8,10 @@ import Top from '../Top/Top';
 import List from '../List/List';
 
 const Wrapper = ({ initialItems }) => {
-  const { dispatch } = useContext(MainContext);
+  const { state, dispatch } = useContext(MainContext);
   useEffect(() => dispatch(createInitial(initialItems)), []);
+
+  const isListRendered = () => state.form.inputStatus.isFocus;
 
   return (
     <div
@@ -17,7 +19,9 @@ const Wrapper = ({ initialItems }) => {
       className="rm rm--dark"
     >
       <Top />
-      <List />
+      {
+        isListRendered() && <List />
+      }
     </div>
   );
 };
