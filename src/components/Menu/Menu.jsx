@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { MainContext } from '../../store';
+import {  toggleMenu } from '../../actions';
 
 import { TrashIcon, CloseIcon } from '../Icons/Icons';
 
 const colors = ['#840032', '#e59500', '#002642'];
 
 const Menu = () => {
+  const { dispatch } = useContext(MainContext);
+
   const updateColor = (color) => {
     console.log(color);
+  };
+
+  const onCloseClick = () => {
+    dispatch(toggleMenu());
   };
 
   return (
@@ -19,7 +28,7 @@ const Menu = () => {
       </div>
       <div className="rm-menu-cta" role="grid">
         <button type="button" aria-label="trash"><TrashIcon /></button>
-        <button type="button" aria-label="close"><CloseIcon /></button>
+        <button type="button" aria-label="close" onClick={onCloseClick}><CloseIcon /></button>
       </div>
     </div>
   );
