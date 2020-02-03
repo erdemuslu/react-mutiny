@@ -48,7 +48,8 @@ export default function itemReducer(state, action) {
         ...state,
         menu: {
           ...state.menu,
-          isOpened: action.payload,
+          isOpened: action.payload.isOpened,
+          selector: action.payload.selector,
         },
       };
     default:

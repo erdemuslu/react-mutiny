@@ -28,8 +28,10 @@ const Items = () => {
   };
 
   const menuOnClick = (selector) => {
-    console.log('onMenuClick', selector);
-    dispatch(toggleMenu(true));
+    dispatch(toggleMenu({
+      isOpened: true,
+      selector,
+    }));
   };
 
   return (
@@ -47,6 +49,7 @@ const Items = () => {
               backgroundColor={item.color}
               title={item.title}
               selector={item.selector}
+              isSelected={state.menu.selector === item.selector}
             />
           )) : null
       }

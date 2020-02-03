@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, string } from 'prop-types';
+import { bool, func, string } from 'prop-types';
 
 const Item = ({
   tagOnClick,
@@ -7,6 +7,7 @@ const Item = ({
   backgroundColor,
   title,
   selector,
+  isSelected,
 }) => (
   <div>
     <button
@@ -19,6 +20,7 @@ const Item = ({
     >
       {title}
     </button>
+    { isSelected ? <span role="grid" className="rm-label">selected</span> : null }
     <button
       type="button"
       className="rm-btn-details"
@@ -35,6 +37,7 @@ Item.defaultProps = {
   backgroundColor: 'black',
   title: 'example',
   selector: '',
+  isSelected: false,
 };
 
 Item.propTypes = {
@@ -43,6 +46,7 @@ Item.propTypes = {
   backgroundColor: string,
   title: string,
   selector: string,
+  isSelected: bool,
 };
 
 export default Item;

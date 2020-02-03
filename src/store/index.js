@@ -10,6 +10,7 @@ const INITIAL_STORE = {
   },
   menu: {
     isOpened: false,
+    selector: '',
   },
   form: {
     value: '',
