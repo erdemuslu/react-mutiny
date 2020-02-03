@@ -2,7 +2,7 @@ import React, { useRef, useContext, useEffect } from 'react';
 import { element } from 'prop-types';
 
 import { MainContext } from '../store';
-import { toggleList } from '../actions';
+import { toggleList, toggleMenu } from '../actions';
 
 const useOutSideClick = (ref) => {
   const { dispatch } = useContext(MainContext);
@@ -10,6 +10,7 @@ const useOutSideClick = (ref) => {
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       dispatch(toggleList(false));
+      dispatch(toggleMenu(false));
     }
   };
 

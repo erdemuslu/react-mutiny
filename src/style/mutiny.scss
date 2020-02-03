@@ -57,6 +57,71 @@
       font-size: .75em;
     }
   }
+
+  &-menu {
+    background-color:#17171a;
+    padding: .4em;
+    font-size: .875em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input[type="text"] {
+      background-color: #111113;
+      border: black;
+      color: white;
+      height: 2em;
+      padding-left: .4em;
+      padding-right: .4em;
+      border-radius: .2em;
+
+      &::placeholder {
+        color: #444;
+      }
+    }
+
+    &-colors {
+      input {
+        border: 0;
+        outline: none;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:not(:first-child) {
+          margin-left: .5em;
+        }
+      }
+    }
+
+    &-cta {
+      button {
+        display: inline-flex;
+        align-items: center;
+        width: 1.5em;
+        height: 1.5em;
+        padding-top: .2em;
+        background-color: transparent;
+
+        * {
+          pointer-events: none;
+        }
+
+        svg {
+          width: 1.5em;
+          height: 1.5em;
+          fill: #fff;
+        }
+
+        &[aria-label="close"] {
+          border-radius: 50%;
+          background-color: red;
+          margin-left: .5em;
+        }
+      }
+    }
+  }
   
   &-top {
     display: flex;

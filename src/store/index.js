@@ -8,6 +8,9 @@ const INITIAL_STORE = {
   list: {
     isOpened: true,
   },
+  menu: {
+    isOpened: false,
+  },
   form: {
     value: '',
     inputStatus: {

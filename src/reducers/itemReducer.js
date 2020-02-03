@@ -1,10 +1,10 @@
 import {
   ITEMS_GET,
   ITEM_ADD,
-  // SELECTED_ITEMS_WIDTH,
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
   TOGGLE_LIST,
+  TOGGLE_MENU,
 } from '../actions/types';
 
 export default function itemReducer(state, action) {
@@ -40,6 +40,14 @@ export default function itemReducer(state, action) {
         ...state,
         list: {
           ...state.list,
+          isOpened: action.payload,
+        },
+      };
+    case TOGGLE_MENU:
+      return {
+        ...state,
+        menu: {
+          ...state.menu,
           isOpened: action.payload,
         },
       };

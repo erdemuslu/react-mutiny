@@ -4,6 +4,7 @@ import {
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
   TOGGLE_LIST,
+  TOGGLE_MENU,
 } from './types';
 
 export const createInitial = (payload) => ({
@@ -28,5 +29,10 @@ export const updateInputStatus = (payload) => ({
 
 export const toggleList = (payload) => ({
   type: TOGGLE_LIST,
+  payload,
+});
+
+export const toggleMenu = (payload) => ({
+  type: TOGGLE_MENU,
   payload,
 });

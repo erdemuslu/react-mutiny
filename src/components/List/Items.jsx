@@ -8,6 +8,7 @@ import {
   addItem,
   setInputValue,
   updateInputStatus,
+  toggleMenu,
 } from '../../actions';
 
 import Item from './Item';
@@ -28,6 +29,7 @@ const Items = () => {
 
   const menuOnClick = (selector) => {
     console.log('onMenuClick', selector);
+    dispatch(toggleMenu(true));
   };
 
   return (

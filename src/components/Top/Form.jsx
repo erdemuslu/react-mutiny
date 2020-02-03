@@ -1,5 +1,6 @@
 import React, {
   createRef,
+  memo,
   useContext,
   useEffect,
 } from 'react';
@@ -32,7 +33,7 @@ const Form = () => {
     if (inputElRef.current) {
       inputElRef.current.focus();
     }
-  }, [state]);
+  }, [state.items]);
 
   return (
     <div
@@ -51,11 +52,10 @@ const Form = () => {
           placeholder="type something"
           onFocus={handleFocus}
           ref={inputElRef}
-          // onBlur={handleBlur}
         />
       </form>
     </div>
   );
 };
 
-export default Form;
+export default memo(Form);

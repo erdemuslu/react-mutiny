@@ -7,6 +7,7 @@ import { getUnselectedItems } from '../../selectors';
 
 import Top from '../Top/Top';
 import List from '../List/List';
+import Menu from '../Menu/Menu';
 
 const Wrapper = ({ initialItems }) => {
   const { state, dispatch } = useContext(MainContext);
@@ -24,6 +25,10 @@ const Wrapper = ({ initialItems }) => {
         isListRendered().length > 0
         && state.list.isOpened
         && <List />
+      }
+      {
+        state.menu.isOpened
+        && <Menu />
       }
     </div>
   );
