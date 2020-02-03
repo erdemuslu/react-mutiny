@@ -5,9 +5,9 @@ import itemReducer from '../reducers/itemReducer';
 
 const INITIAL_STORE = {
   items: {},
-  // itemsProps: {
-  //   width: '0',
-  // },
+  list: {
+    isOpened: true,
+  },
   form: {
     value: '',
     inputStatus: {

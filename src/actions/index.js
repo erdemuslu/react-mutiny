@@ -1,9 +1,9 @@
 import {
   ITEMS_GET,
   ITEM_ADD,
-  // SELECTED_ITEMS_WIDTH,
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
+  TOGGLE_LIST,
 } from './types';
 
 export const createInitial = (payload) => ({
@@ -26,7 +26,7 @@ export const updateInputStatus = (payload) => ({
   payload,
 });
 
-// export const setSelectedItemsWrapperWidth = (payload) => ({
-//   type: SELECTED_ITEMS_WIDTH,
-//   payload,
-// });
+export const toggleList = (payload) => ({
+  type: TOGGLE_LIST,
+  payload,
+});

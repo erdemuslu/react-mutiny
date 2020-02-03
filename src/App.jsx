@@ -3,13 +3,16 @@ import { shape } from 'prop-types';
 
 import Store from './store';
 
+import WithOutSideClick from './utils/WithOutSideClick';
 import Wrapper from './components/Wrapper/Wrapper';
 
 const App = ({ initialItems }) => (
   <Store>
-    <Wrapper
-      initialItems={initialItems}
-    />
+    <WithOutSideClick>
+      <Wrapper
+        initialItems={initialItems}
+      />
+    </WithOutSideClick>
   </Store>
 );
 

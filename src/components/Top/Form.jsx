@@ -8,6 +8,7 @@ import { MainContext } from '../../store';
 import {
   setInputValue,
   updateInputStatus,
+  toggleList,
 } from '../../actions';
 
 const Form = () => {
@@ -22,10 +23,10 @@ const Form = () => {
     dispatch(setInputValue(inputValue));
   };
 
-  const handleFocus = () => dispatch(
-    updateInputStatus({ isFocus: true }),
-  );
-  // const handleBlur = () => dispatch(updateInputStatus({ isFocus: false, isBlur: true }));
+  const handleFocus = () => {
+    dispatch(updateInputStatus({ isFocus: true }));
+    dispatch(toggleList(true));
+  };
 
   useEffect(() => {
     if (inputElRef.current) {

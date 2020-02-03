@@ -4,6 +4,7 @@ import {
   // SELECTED_ITEMS_WIDTH,
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
+  TOGGLE_LIST,
 } from '../actions/types';
 
 export default function itemReducer(state, action) {
@@ -32,6 +33,14 @@ export default function itemReducer(state, action) {
             isFocus: action.payload.isFocus,
             isBlur: action.payload.isBlur,
           },
+        },
+      };
+    case TOGGLE_LIST:
+      return {
+        ...state,
+        list: {
+          ...state.list,
+          isOpened: action.payload,
         },
       };
     default:

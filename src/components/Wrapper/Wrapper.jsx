@@ -3,6 +3,7 @@ import { shape } from 'prop-types';
 
 import { MainContext } from '../../store';
 import { createInitial } from '../../actions';
+import { getUnselectedItems } from '../../selectors';
 
 import Top from '../Top/Top';
 import List from '../List/List';
@@ -11,7 +12,7 @@ const Wrapper = ({ initialItems }) => {
   const { state, dispatch } = useContext(MainContext);
   useEffect(() => dispatch(createInitial(initialItems)), []);
 
-  const isListRendered = () => state.form.inputStatus.isFocus;
+  const isListRendered = () => getUnselectedItems([state.items, state.form.value]);
 
   return (
     <div
@@ -20,7 +21,9 @@ const Wrapper = ({ initialItems }) => {
     >
       <Top />
       {
-        isListRendered() && <List />
+        isListRendered().length > 0
+        && state.list.isOpened
+        && <List />
       }
     </div>
   );
