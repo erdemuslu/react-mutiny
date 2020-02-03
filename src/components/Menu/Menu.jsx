@@ -15,7 +15,7 @@ const Menu = () => {
   };
 
   const onCloseClick = () => {
-    dispatch(toggleMenu());
+    dispatch(toggleMenu({ isOpened: false, selector: '' }));
   };
 
   return (
