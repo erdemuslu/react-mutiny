@@ -1,26 +1,43 @@
-import React, { useContext } from 'react';
+import React, { createRef, useContext, useEffect } from 'react';
 
 import { MainContext } from '../../store';
-import {  toggleMenu } from '../../actions';
+import { toggleMenu, updateItem } from '../../actions';
 
 import { TrashIcon, CloseIcon } from '../Icons/Icons';
 
 const colors = ['#840032', '#e59500', '#002642'];
 
 const Menu = () => {
-  const { dispatch } = useContext(MainContext);
+  const { state, dispatch } = useContext(MainContext);
+  const inputElRef = createRef();
 
   const updateColor = (color) => {
-    console.log(color);
+    dispatch(updateItem({
+      selector: state.menu.selector,
+      color,
+    }));
+  };
+
+  const updateTitle = ({ target: { value: title } }) => {
+    dispatch(updateItem({
+      selector: state.menu.selector,
+      title,
+    }));
   };
 
   const onCloseClick = () => {
     dispatch(toggleMenu({ isOpened: false, selector: '' }));
   };
 
+  useEffect(() => {
+    if (inputElRef.current && state.menu.selector) {
+      inputElRef.current.focus();
+    }
+  }, [state.menu.selector]);
+
   return (
     <div className="rm-menu" role="grid">
-      <input type="text" aria-label="name" placeholder="Type something" />
+      <input ref={inputElRef} type="text" aria-label="name" placeholder="Type something" onChange={updateTitle} />
       <div className="rm-menu-colors" role="grid">
         {
           colors.map((color, index) => <input key={index.toString()} type="button" aria-label="color" onClick={updateColor.bind(this, color)} style={{ backgroundColor: color }} />)

@@ -5,6 +5,7 @@ import {
   INPUT_STATUS_UPDATE,
   TOGGLE_LIST,
   TOGGLE_MENU,
+  ITEM_UPDATE,
 } from '../actions/types';
 
 export default function itemReducer(state, action) {
@@ -19,8 +20,18 @@ export default function itemReducer(state, action) {
           [action.payload.selector]: { ...state.items[action.payload.selector], selected: true },
         },
       };
-    // case SELECTED_ITEMS_WIDTH:
-    //   return { ...state, itemProps: { ...state.itemProps, width: action.payload } };
+    case ITEM_UPDATE:
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.selector]: {
+            ...state.items[action.payload.selector],
+            color: action.payload.color || state.items[action.payload.selector].color,
+            title: action.payload.title || state.items[action.payload.selector].title,
+          },
+        },
+      };
     case INPUT_VALUE_SET:
       return { ...state, form: { ...state.form, value: action.payload } };
     case INPUT_STATUS_UPDATE:

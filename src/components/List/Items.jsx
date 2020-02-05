@@ -28,6 +28,7 @@ const Items = () => {
   };
 
   const menuOnClick = (selector) => {
+    dispatch(updateInputStatus({ isForceFocus: false }));
     dispatch(toggleMenu({
       isOpened: true,
       selector,

@@ -30,7 +30,7 @@ const Form = () => {
   };
 
   useEffect(() => {
-    if (inputElRef.current) {
+    if (inputElRef.current && state.form.inputStatus.isForceFocus) {
       inputElRef.current.focus();
     }
   }, [state.items]);
