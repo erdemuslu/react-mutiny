@@ -37,7 +37,7 @@ const Menu = () => {
 
   return (
     <div className="rm-menu" role="grid">
-      <input ref={inputElRef} type="text" aria-label="name" placeholder="Type something" onChange={updateTitle} />
+      <input ref={inputElRef} type="text" aria-label="name" placeholder={state.items[state.menu.selector].title} onChange={updateTitle} />
       <div className="rm-menu-colors" role="grid">
         {
           colors.map((color, index) => <input key={index.toString()} type="button" aria-label="color" onClick={updateColor.bind(this, color)} style={{ backgroundColor: color }} />)
