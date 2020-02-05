@@ -33,7 +33,7 @@ const Form = () => {
     if (inputElRef.current && state.form.inputStatus.isForceFocus) {
       inputElRef.current.focus();
     }
-  }, [state.items]);
+  }, [state]);
 
   return (
     <div

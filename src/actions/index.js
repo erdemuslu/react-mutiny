@@ -1,6 +1,7 @@
 import {
   ITEMS_GET,
   ITEM_ADD,
+  ITEM_MAKE_SELECTED,
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
   TOGGLE_LIST,
@@ -13,8 +14,8 @@ export const createInitial = (payload) => ({
   payload,
 });
 
-export const addItem = (payload) => ({
-  type: ITEM_ADD,
+export const makeItemSelected = (payload) => ({
+  type: ITEM_MAKE_SELECTED,
   payload,
 });
 

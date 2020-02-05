@@ -5,7 +5,7 @@ import React, {
 import { MainContext } from '../../store';
 import { getUnselectedItems } from '../../selectors';
 import {
-  addItem,
+  makeItemSelected,
   setInputValue,
   updateInputStatus,
   toggleMenu,
@@ -22,7 +22,7 @@ const Items = () => {
   }, [state]);
 
   const tagOnClick = (selector) => {
-    dispatch(addItem({ selector }));
+    dispatch(makeItemSelected({ selector }));
     dispatch(setInputValue(''));
     dispatch(updateInputStatus({ isForceFocus: true }));
   };

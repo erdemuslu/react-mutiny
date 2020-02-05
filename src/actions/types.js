@@ -5,3 +5,4 @@ export const INPUT_STATUS_UPDATE = 'INPUT_STATUS_UPDATE';
 export const TOGGLE_LIST = 'TOGGLE_LIST';
 export const TOGGLE_MENU = 'TOGGLE_MENU';
 export const ITEM_UPDATE = 'ITEM_UPDATE';
+export const ITEM_MAKE_SELECTED = 'ITEM_MAKE_SELECTED';

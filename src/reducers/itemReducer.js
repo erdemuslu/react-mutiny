@@ -1,6 +1,7 @@
 import {
   ITEMS_GET,
   ITEM_ADD,
+  ITEM_MAKE_SELECTED,
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
   TOGGLE_LIST,
@@ -12,7 +13,7 @@ export default function itemReducer(state, action) {
   switch (action.type) {
     case ITEMS_GET:
       return { ...state, items: action.payload };
-    case ITEM_ADD:
+    case ITEM_MAKE_SELECTED:
       return {
         ...state,
         items: {
@@ -43,6 +44,7 @@ export default function itemReducer(state, action) {
             ...state.form.inputStatus,
             isFocus: action.payload.isFocus,
             isBlur: action.payload.isBlur,
+            isForceFocus: action.payload.isForceFocus,
           },
         },
       };
