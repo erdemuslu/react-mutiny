@@ -5,6 +5,11 @@
   "repository": "git@github.com:erdemuslu/react-mutiny.git",
   "author": "Erdem Uslu <usluerdem@yandex.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "clean": "rm -rf .cache dist"
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
