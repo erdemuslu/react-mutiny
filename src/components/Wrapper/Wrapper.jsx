@@ -11,7 +11,22 @@ import Menu from '../Menu/Menu';
 
 const Wrapper = ({ initialItems }) => {
   const { state, dispatch } = useContext(MainContext);
-  useEffect(() => dispatch(createInitial(initialItems)), []);
+  useEffect(() => {
+    const updatedInitialItems = Object.keys(initialItems).reduce((payload, key) => {
+      const obj = payload;
+
+      if (!('isHidden' in initialItems[key])) {
+        const newItem = { ...initialItems[key], isHidden: false };
+        obj[key] = newItem;
+      } else {
+        obj[key] = initialItems[key];
+      }
+
+      return obj;
+    }, {});
+
+    return dispatch(createInitial(updatedInitialItems));
+  }, []);
 
   const isListRendered = () => getUnselectedItems([state.items, state.form.value]);
 

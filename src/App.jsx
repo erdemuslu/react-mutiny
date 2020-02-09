@@ -23,6 +23,7 @@ App.defaultProps = {
       title: 'TODO',
       selected: false,
       selector: 'todo',
+      isHidden: false,
     },
     inProgres: {
       color: '#f78154',
