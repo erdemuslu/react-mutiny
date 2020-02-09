@@ -1,6 +1,7 @@
 import {
   ITEMS_GET,
-  ITEM_ADD,
+  // ITEM_ADD,
+  ITEM_HIDE,
   ITEM_MAKE_SELECTED,
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
@@ -19,6 +20,17 @@ export default function itemReducer(state, action) {
         items: {
           ...state.items,
           [action.payload.selector]: { ...state.items[action.payload.selector], selected: true },
+        },
+      };
+    case ITEM_HIDE:
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.selector]: {
+            ...state.items[action.payload.selector],
+            isHidden: true,
+          },
         },
       };
     case ITEM_UPDATE:

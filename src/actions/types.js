@@ -1,5 +1,6 @@
 export const ITEMS_GET = 'ITEMS_GET';
 export const ITEM_ADD = 'ITEM_ADD';
+export const ITEM_HIDE = 'ITEM_HIDE';
 export const INPUT_VALUE_SET = 'INPUT_VALUE_SET';
 export const INPUT_STATUS_UPDATE = 'INPUT_STATUS_UPDATE';
 export const TOGGLE_LIST = 'TOGGLE_LIST';

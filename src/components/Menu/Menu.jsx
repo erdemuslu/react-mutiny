@@ -1,7 +1,7 @@
 import React, { createRef, useContext, useEffect } from 'react';
 
 import { MainContext } from '../../store';
-import { toggleMenu, updateItem } from '../../actions';
+import { toggleMenu, updateItem, hideItem } from '../../actions';
 
 import { TrashIcon, CloseIcon } from '../Icons/Icons';
 
@@ -29,6 +29,10 @@ const Menu = () => {
     dispatch(toggleMenu({ isOpened: false, selector: '' }));
   };
 
+  const onDeleteItem = () => {
+    dispatch(hideItem({ selector: state.menu.selector }));
+  };
+
   useEffect(() => {
     if (inputElRef.current && state.menu.selector) {
       inputElRef.current.focus();
@@ -44,7 +48,7 @@ const Menu = () => {
         }
       </div>
       <div className="rm-menu-cta" role="grid">
-        <button type="button" aria-label="trash"><TrashIcon /></button>
+        <button type="button" aria-label="trash" onClick={onDeleteItem}><TrashIcon /></button>
         <button type="button" aria-label="close" onClick={onCloseClick}><CloseIcon /></button>
       </div>
     </div>

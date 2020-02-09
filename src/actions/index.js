@@ -1,6 +1,7 @@
 import {
   ITEMS_GET,
   ITEM_ADD,
+  ITEM_HIDE,
   ITEM_MAKE_SELECTED,
   INPUT_VALUE_SET,
   INPUT_STATUS_UPDATE,
@@ -21,6 +22,11 @@ export const makeItemSelected = (payload) => ({
 
 export const updateItem = (payload) => ({
   type: ITEM_UPDATE,
+  payload,
+});
+
+export const hideItem = (payload) => ({
+  type: ITEM_HIDE,
   payload,
 });
 
