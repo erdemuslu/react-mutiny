@@ -22,6 +22,7 @@
   &--dark {
     --text-color: #cfcfd1;
     --list-bg: #222226;
+    background-color: #2a2a2e;
     &, *, input, select {
       color: var(--text-color);
     }
