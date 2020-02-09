@@ -10,6 +10,7 @@ import {
   setInputValue,
   updateInputStatus,
   toggleList,
+  toggleMenu,
 } from '../../actions';
 
 const Form = () => {
@@ -27,6 +28,7 @@ const Form = () => {
   const handleFocus = () => {
     dispatch(updateInputStatus({ isFocus: true }));
     dispatch(toggleList(true));
+    dispatch(toggleMenu(false));
   };
 
   useEffect(() => {
