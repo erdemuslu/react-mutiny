@@ -6,7 +6,7 @@ import itemReducer from '../reducers/itemReducer';
 const INITIAL_STORE = {
   items: {},
   list: {
-    isOpened: true,
+    isOpened: false,
   },
   menu: {
     isOpened: false,
