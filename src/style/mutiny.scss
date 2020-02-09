@@ -63,7 +63,7 @@
     padding: .4em;
     font-size: .875em;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 
     input[type="text"] {
@@ -81,11 +81,35 @@
     }
 
     &-colors {
+      position: relative;
+      width: auto;
+      height: 1.5em;
+      border-radius: .25em;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: 1em;
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        padding: 0 .4em;
+        z-index: 2;
+        width: auto;
+        height: 100%;
+        pointer-events: none;
+        background-color: transparent;
+      }
+
       input {
+        position: absolute;
+        z-index: 1;
+        top: -10%;
+        left: -10%;
         border: 0;
         outline: none;
-        width: 1em;
-        height: 1em;
+        width: 120%;
+        height: 120%;
         border-radius: 50%;
         cursor: pointer;
 

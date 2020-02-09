@@ -5,13 +5,11 @@ import { toggleMenu, updateItem, hideItem } from '../../actions';
 
 import { TrashIcon, CloseIcon } from '../Icons/Icons';
 
-const colors = ['#840032', '#e59500', '#002642'];
-
 const Menu = () => {
   const { state, dispatch } = useContext(MainContext);
   const inputElRef = createRef();
 
-  const updateColor = (color) => {
+  const onColorChange = ({ target: { value: color } }) => {
     dispatch(updateItem({
       selector: state.menu.selector,
       color,
@@ -43,9 +41,8 @@ const Menu = () => {
     <div className="rm-menu" role="grid">
       <input ref={inputElRef} type="text" aria-label="name" placeholder={state.items[state.menu.selector].title} onChange={updateTitle} />
       <div className="rm-menu-colors" role="grid">
-        {
-          colors.map((color, index) => <input key={index.toString()} type="button" aria-label="color" onClick={updateColor.bind(this, color)} style={{ backgroundColor: color }} />)
-        }
+        <input type="color" name="color" aria-label="color" onChange={onColorChange} />
+        <span role="contentinfo">Color</span>
       </div>
       <div className="rm-menu-cta" role="grid">
         <button type="button" aria-label="trash" onClick={onDeleteItem}><TrashIcon /></button>
