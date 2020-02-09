@@ -15,6 +15,11 @@ export const createInitial = (payload) => ({
   payload,
 });
 
+export const addItem = (payload) => ({
+  type: ITEM_ADD,
+  payload,
+});
+
 export const makeItemSelected = (payload) => ({
   type: ITEM_MAKE_SELECTED,
   payload,

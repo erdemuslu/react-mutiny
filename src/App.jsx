@@ -25,11 +25,11 @@ App.defaultProps = {
       selector: 'todo',
       isHidden: false,
     },
-    inProgres: {
+    'in-progress': {
       color: '#f78154',
       title: 'IN PROGRESS',
       selected: false,
-      selector: 'inProgres',
+      selector: 'in-progress',
     },
     completed: {
       color: '#669d69',

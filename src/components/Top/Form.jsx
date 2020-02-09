@@ -7,11 +7,14 @@ import React, {
 
 import { MainContext } from '../../store';
 import {
+  addItem,
   setInputValue,
   updateInputStatus,
   toggleList,
   toggleMenu,
 } from '../../actions';
+
+import createRandomColor from '../../utils/index';
 
 const Form = () => {
   const { state, dispatch } = useContext(MainContext);
@@ -19,6 +22,26 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newTagKey = state.form.value.toLowerCase().split(' ').join('-');
+    const tagIsExist = Object.keys(state.items)
+      .some((key) => key === newTagKey);
+
+    if (tagIsExist) {
+      alert('tag is exist');
+      return false;
+    }
+
+    const newTag = {
+      color: createRandomColor(),
+      title: state.form.value,
+      selected: false,
+      selector: newTagKey,
+      isHidden: false,
+    };
+
+    dispatch(setInputValue(''));
+    return dispatch(addItem(newTag));
   };
 
   const handleChange = ({ target: { value: inputValue } }) => {

@@ -1,6 +1,6 @@
 import {
   ITEMS_GET,
-  // ITEM_ADD,
+  ITEM_ADD,
   ITEM_HIDE,
   ITEM_MAKE_SELECTED,
   INPUT_VALUE_SET,
@@ -14,6 +14,14 @@ export default function itemReducer(state, action) {
   switch (action.type) {
     case ITEMS_GET:
       return { ...state, items: action.payload };
+    case ITEM_ADD:
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.selector]: action.payload,
+        },
+      };
     case ITEM_MAKE_SELECTED:
       return {
         ...state,

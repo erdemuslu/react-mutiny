@@ -1,7 +1,9 @@
 import React, { createRef, useContext, useEffect } from 'react';
 
 import { MainContext } from '../../store';
-import { toggleMenu, updateItem, hideItem } from '../../actions';
+import {
+  updateInputStatus, toggleMenu, updateItem, hideItem, setInputValue,
+} from '../../actions';
 
 import { TrashIcon, CloseIcon } from '../Icons/Icons';
 
@@ -28,7 +30,9 @@ const Menu = () => {
   };
 
   const onDeleteItem = () => {
+    dispatch(setInputValue(''));
     dispatch(hideItem({ selector: state.menu.selector }));
+    dispatch(updateInputStatus({ isForceFocus: true }));
   };
 
   useEffect(() => {
