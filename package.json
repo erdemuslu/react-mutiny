@@ -9,7 +9,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "clean": "rm -rf .cache dist",
-    "publish": "yarn clean && yarn build && surge dist react-mutiny.surge.sh"
+    "deploy": "yarn clean && yarn build && surge dist react-mutiny.surge.sh"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
