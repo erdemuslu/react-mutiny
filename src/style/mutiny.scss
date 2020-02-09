@@ -167,6 +167,42 @@
     &-items {
       display: flex;
       align-items: center;
+
+      .rm-tag {
+        display: inline-flex;
+        align-items: center;
+
+        button {
+          pointer-events: auto;
+
+          &:first-child {
+            background-color: transparent;
+            margin-right: .75em;
+            color: #fff;
+          }
+
+          &:last-child {
+            padding: .5em;
+            font-size: 1em;
+            line-height: 0.5;
+
+            &:before, &:after {
+              content: '';
+            }
+
+            &:before, span {
+              margin-right: .25em;
+            }
+
+            span, &:before, &:after {
+              width: .4em;
+              height: .4em;
+              border-radius: 50%;
+              background-color: #fff;
+            }
+          }
+        }
+      }
     }
 
     &-form {

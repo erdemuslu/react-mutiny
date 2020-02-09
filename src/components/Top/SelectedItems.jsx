@@ -3,12 +3,29 @@ import React, {
 } from 'react';
 
 import { MainContext } from '../../store';
+import {
+  setInputValue, makeItemSelected, updateInputStatus, toggleMenu,
+} from '../../actions';
 import { getSelectedItems } from '../../selectors';
 
 const SelectedItems = () => {
-  const { state } = useContext(MainContext);
+  const { state, dispatch } = useContext(MainContext);
   const [selectedItems, setSelectedItems] = useState([]);
   const topItemsRef = createRef();
+
+  const tagOnClick = (selector) => {
+    dispatch(makeItemSelected({ selector }));
+    dispatch(setInputValue(''));
+    dispatch(updateInputStatus({ isForceFocus: true }));
+  };
+
+  const menuOnClick = (selector) => {
+    dispatch(updateInputStatus({ isForceFocus: false }));
+    dispatch(toggleMenu({
+      isOpened: true,
+      selector,
+    }));
+  };
 
   useEffect(() => {
     setSelectedItems(getSelectedItems(state.items));
@@ -30,7 +47,19 @@ const SelectedItems = () => {
                 backgroundColor: item.color,
               }}
             >
-              {item.title}
+              <button
+                type="button"
+                onClick={tagOnClick.bind(this, item.selector)}
+              >
+                {item.title}
+              </button>
+              <button
+                type="button"
+                className="rm-btn-details"
+                onClick={menuOnClick.bind(this, item.selector)}
+              >
+                <span role="contentinfo" />
+              </button>
             </div>
           )) : null
       }

@@ -19,7 +19,10 @@ export default function itemReducer(state, action) {
         ...state,
         items: {
           ...state.items,
-          [action.payload.selector]: { ...state.items[action.payload.selector], selected: true },
+          [action.payload.selector]: {
+            ...state.items[action.payload.selector],
+            selected: !state.items[action.payload.selector].selected,
+          },
         },
       };
     case ITEM_HIDE:

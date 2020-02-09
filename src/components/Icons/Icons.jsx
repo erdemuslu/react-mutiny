@@ -12,3 +12,13 @@ export const TrashIcon = () => (
 export const CloseIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" x="0px" y="0px"><g><path d="M54.24,50,74.92,29.32a3,3,0,0,0-4.24-4.24L50,45.76,29.32,25.07a3,3,0,0,0-4.24,4.24L45.76,50,25.08,70.68a3,3,0,1,0,4.24,4.24L50,54.24,70.68,74.92a3,3,0,0,0,4.24-4.24Z" /></g></svg>
 );
+
+export const MenuIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" xmln="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" xmlSpace="preserve">
+    <g>
+      <circle cx="49.8" cy="49.9" r="9" />
+      <circle cx="19.8" cy="49.9" r="9" />
+      <circle cx="79.8" cy="49.9" r="9" />
+    </g>
+  </svg>
+);
