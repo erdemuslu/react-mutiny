@@ -26,7 +26,7 @@ const Item = ({
       className="rm-btn-details"
       onClick={menuOnClick.bind(this, selector)}
     >
-      details
+      <span role="contentinfo" />
     </button>
   </div>
 );

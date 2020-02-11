@@ -49,8 +49,8 @@ const Menu = () => {
         <span role="contentinfo">Color</span>
       </div>
       <div className="rm-menu-cta" role="grid">
-        <button type="button" aria-label="trash" onClick={onDeleteItem}><TrashIcon /></button>
-        <button type="button" aria-label="close" onClick={onCloseClick}><CloseIcon /></button>
+        <button id="trash" type="button" aria-label="trash" onClick={onDeleteItem}><TrashIcon /></button>
+        <button id="close" type="button" aria-label="close" onClick={onCloseClick}><CloseIcon /></button>
       </div>
     </div>
   );

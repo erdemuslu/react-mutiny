@@ -1,16 +1,17 @@
 import React, {
-  memo, createRef, useContext, useEffect, useState,
+  memo, createRef, useContext,
 } from 'react';
+import { shape, arrayOf } from 'prop-types';
 
 import { MainContext } from '../../store';
 import {
   setInputValue, makeItemSelected, updateInputStatus, toggleMenu,
 } from '../../actions';
-import { getSelectedItems } from '../../selectors';
 
-const SelectedItems = () => {
-  const { state, dispatch } = useContext(MainContext);
-  const [selectedItems, setSelectedItems] = useState([]);
+const SelectedItems = ({
+  selectedItems = {},
+}) => {
+  const { dispatch } = useContext(MainContext);
   const topItemsRef = createRef();
 
   const tagOnClick = (selector) => {
@@ -27,10 +28,6 @@ const SelectedItems = () => {
     }));
   };
 
-  useEffect(() => {
-    setSelectedItems(getSelectedItems(state.items));
-  }, [state]);
-
   return (
     <div
       role="grid"
@@ -38,33 +35,40 @@ const SelectedItems = () => {
       ref={topItemsRef}
     >
       {
-        selectedItems
-          ? Object.values(selectedItems).map((item, index) => (
-            <div
-              key={index.toString()}
+        Object.values(selectedItems).map((item, index) => (
+          <div
+            key={index.toString()}
+            style={{
+              backgroundColor: item.color,
+            }}
+          >
+            <button
+              type="button"
               className="rm-tag"
-              style={{
-                backgroundColor: item.color,
-              }}
+              onClick={tagOnClick.bind(this, item.selector)}
             >
-              <button
-                type="button"
-                onClick={tagOnClick.bind(this, item.selector)}
-              >
-                {item.title}
-              </button>
-              <button
-                type="button"
-                className="rm-btn-details"
-                onClick={menuOnClick.bind(this, item.selector)}
-              >
-                <span role="contentinfo" />
-              </button>
-            </div>
-          )) : null
+              {item.title}
+            </button>
+            <button
+              type="button"
+              className="rm-btn-details"
+              onClick={menuOnClick.bind(this, item.selector)}
+            >
+              <span role="contentinfo" />
+            </button>
+          </div>
+        ))
       }
     </div>
   );
+};
+
+SelectedItems.defaultProps = {
+  selectedItems: {},
+};
+
+SelectedItems.propTypes = {
+  selectedItems: arrayOf(shape({})),
 };
 
 export default memo(SelectedItems);
