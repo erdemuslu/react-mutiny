@@ -48,17 +48,21 @@
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
+    flex-wrap: wrap;
     padding: .4em;
 
     &-items {
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
 
       & > div {
         display: inline-flex;
         justify-content: flex-start;
         align-items: stretch;
+        margin-bottom: .4em;
         border-radius: .2em;
 
         &:not(:last-of-type) {
@@ -68,21 +72,17 @@
         button {
           &:last-child {
             padding-right: .64em;
-          }
-        }
-      }
 
-      & + #{$this}-top-form {
-        form {
-          input {
-            padding-left: .75em;
+            &:before, &:after, span {
+              background-color: #fff;
+            }
           }
         }
       }
     }
 
     &-form {
-      flex-grow: 1;
+      width: 100%;
       min-height: 1.5em;
 
       form {
