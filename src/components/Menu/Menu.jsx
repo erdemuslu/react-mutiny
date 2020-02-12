@@ -45,7 +45,7 @@ const Menu = () => {
     <div className="rm-menu" role="grid">
       <input ref={inputElRef} type="text" aria-label="name" placeholder={state.items[state.menu.selector].title} onChange={updateTitle} />
       <div className="rm-menu-colors" role="grid">
-        <input type="color" name="color" aria-label="color" onChange={onColorChange} />
+        <input type="color" name="color" aria-label="color" onChange={onColorChange} value={state.items[state.menu.selector].color} />
         <span role="contentinfo">Color</span>
       </div>
       <div className="rm-menu-cta" role="grid">

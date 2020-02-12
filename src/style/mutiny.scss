@@ -21,6 +21,7 @@
     font-size: .875em;
     padding: .32em .64em;
     border-radius: .2em;
+    color: var(--button-text-color);
   }
 
   .rm-btn {
@@ -48,9 +49,11 @@
   }
 
   .rm-label {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid black;
     font-size: .75em;
     border-radius: .2em;
-    border: 1px solid black;
     padding: .2em .4em;
 
     &.is-error {
@@ -64,6 +67,7 @@
     align-items: stretch;
     flex-wrap: wrap;
     padding: .4em;
+    border-bottom: 1px solid var(--list-bg-color);
 
     &-items {
       display: flex;
@@ -108,7 +112,7 @@
           color: var(--text-color);
 
           &::placeholder {
-            color: var(--text-color);;
+            color: var(--text-color);
           }
         }
       }
@@ -116,8 +120,9 @@
   }
 
   &-list {
-    &-items {
+    background-color: var(--list-bg-color);
 
+    &-items {
       & > div {
         display: flex;
         justify-content: flex-start;
@@ -142,12 +147,15 @@
   &-menu {
     display: flex;
     padding: .4em .4em .6em .4em;
+    border: 1px solid var(--list-bg-color);
 
     & > input[type="text"] {
+      max-width: 50%;
       color: var(--text-color);
       flex-grow: 1;
       margin-right: 1em;
       height: 2em;
+      border-bottom: 1px solid var(--list-bg-color);
 
       &::placeholder {
         color: var(--text-color);
@@ -177,8 +185,8 @@
         align-items: center;
         position: relative;
         font-size: .75em;
-        padding-left: .5em;
-        padding-right: .5em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
         z-index: 2;
         color: var(--text-color);
         pointer-events: none;

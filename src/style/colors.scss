@@ -1,10 +1,17 @@
 .rm {
+  --bg-color: transparent;
+  --bg-color-hover: #dbd9d9;
+  --list-bg-color: #ededed;
+  --text-color: #333;
+  --button-text-color: #fff;
+  --details-btn-bg: #38383d;
+  --error-color: #f0134d;
 
   &--dark {
     --bg-color: #2a2a2e;
     --bg-color-hover: #1a1a1e;
+    --list-bg-color: #2a2a2e;
     --text-color: #eee;
     --details-btn-bg: #38383d;
-    --error-color: #f0134d;
   }
 }

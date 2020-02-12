@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --no-source-maps",
     "clean": "rm -rf .cache dist",
     "deploy": "yarn clean && yarn build && surge dist react-mutiny.surge.sh"
   },
