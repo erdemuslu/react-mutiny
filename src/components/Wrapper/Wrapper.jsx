@@ -8,6 +8,7 @@ import { getUnselectedItems } from '../../selectors';
 import Top from '../Top/Top';
 import List from '../List/List';
 import Menu from '../Menu/Menu';
+import Error from '../Error/Error';
 
 const Wrapper = ({ initialItems }) => {
   const { state, dispatch } = useContext(MainContext);
@@ -35,16 +36,23 @@ const Wrapper = ({ initialItems }) => {
       role="grid"
       className="rm rm--dark"
     >
-      <Top />
-      {
-        isListRendered().length > 0
-        && state.list.isOpened
-        && <List />
-      }
-      {
-        state.menu.isOpened
-        && <Menu />
-      }
+      <div
+        className="rm-inner"
+      >
+        <Top />
+        {
+          isListRendered().length > 0
+          && state.list.isOpened
+          && <List />
+        }
+        {
+          state.menu.isOpened
+          && <Menu />
+        }
+        {
+          state.list.isTagExist && <Error />
+        }
+      </div>
     </div>
   );
 };

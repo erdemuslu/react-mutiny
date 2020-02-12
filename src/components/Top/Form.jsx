@@ -12,6 +12,7 @@ import {
   updateInputStatus,
   toggleList,
   toggleMenu,
+  showError,
 } from '../../actions';
 
 import createRandomColor from '../../utils/index';
@@ -28,7 +29,11 @@ const Form = () => {
       .some((key) => key === newTagKey);
 
     if (tagIsExist) {
-      alert('tag is exist');
+      dispatch(showError(true));
+
+      setTimeout(() => {
+        dispatch(showError(false));
+      }, 1200);
       return false;
     }
 

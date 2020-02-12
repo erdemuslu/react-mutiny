@@ -8,6 +8,7 @@ import {
   TOGGLE_LIST,
   TOGGLE_MENU,
   ITEM_UPDATE,
+  ERROR_SHOW,
 } from '../actions/types';
 
 export default function itemReducer(state, action) {
@@ -86,6 +87,14 @@ export default function itemReducer(state, action) {
           ...state.menu,
           isOpened: action.payload.isOpened,
           selector: action.payload.selector,
+        },
+      };
+    case ERROR_SHOW:
+      return {
+        ...state,
+        list: {
+          ...state.list,
+          isTagExist: action.payload,
         },
       };
     default:

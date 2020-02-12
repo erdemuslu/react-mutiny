@@ -7,6 +7,16 @@
   border-radius: .24em;
   overflow: hidden;
 
+  &-inner {
+    position: relative;
+
+    & > #{$this}-label {
+      position: absolute;
+      top: .64em;
+      right: .5em;
+    }
+  }
+
   .rm-tag {
     font-size: .875em;
     padding: .32em .64em;
@@ -42,6 +52,10 @@
     border-radius: .2em;
     border: 1px solid black;
     padding: .2em .4em;
+
+    &.is-error {
+      background-color: var(--error-color);
+    }
   }
 
   &-top {

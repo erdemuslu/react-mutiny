@@ -7,3 +7,4 @@ export const TOGGLE_LIST = 'TOGGLE_LIST';
 export const TOGGLE_MENU = 'TOGGLE_MENU';
 export const ITEM_UPDATE = 'ITEM_UPDATE';
 export const ITEM_MAKE_SELECTED = 'ITEM_MAKE_SELECTED';
+export const ERROR_SHOW = 'ERROR_SHOW';

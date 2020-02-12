@@ -8,6 +8,7 @@ import {
   TOGGLE_LIST,
   TOGGLE_MENU,
   ITEM_UPDATE,
+  ERROR_SHOW,
 } from './types';
 
 export const createInitial = (payload) => ({
@@ -52,5 +53,10 @@ export const toggleList = (payload) => ({
 
 export const toggleMenu = (payload) => ({
   type: TOGGLE_MENU,
+  payload,
+});
+
+export const showError = (payload) => ({
+  type: ERROR_SHOW,
   payload,
 });

@@ -7,6 +7,7 @@ const INITIAL_STORE = {
   items: {},
   list: {
     isOpened: false,
+    isTagExist: false,
   },
   menu: {
     isOpened: false,
