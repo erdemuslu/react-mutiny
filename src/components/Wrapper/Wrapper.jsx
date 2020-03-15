@@ -34,7 +34,7 @@ const Wrapper = ({ initialItems }) => {
   return (
     <div
       role="grid"
-      className="rm"
+      className="rm rm--dark"
     >
       <div
         className="rm-inner"

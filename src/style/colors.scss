@@ -6,6 +6,7 @@
   --button-text-color: #fff;
   --details-btn-bg: #38383d;
   --error-color: #f0134d;
+  --input-placeholder: #333;
 
   &--dark {
     --bg-color: #2a2a2e;
@@ -13,5 +14,6 @@
     --list-bg-color: #2a2a2e;
     --text-color: #eee;
     --details-btn-bg: #38383d;
+    --input-placeholder: #808080;
   }
 }

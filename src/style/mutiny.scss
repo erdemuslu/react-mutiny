@@ -112,7 +112,7 @@
           color: var(--text-color);
 
           &::placeholder {
-            color: var(--text-color);
+            color: var(--input-placeholder);
           }
         }
       }
@@ -158,7 +158,7 @@
       border-bottom: 1px solid var(--list-bg-color);
 
       &::placeholder {
-        color: var(--text-color);
+        color: var(--input-placeholder);
       }
     }
 
